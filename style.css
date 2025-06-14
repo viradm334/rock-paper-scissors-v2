@@ -1,0 +1,52 @@
+:root {
+    --box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
+}
+
+body {
+    padding: 50px 70px;
+    background-color: rgb(8, 201, 211);
+}
+
+.btn {
+    margin: 5px;
+    border: none;
+}
+
+#btn-gunting {
+    background-color: rgb(245, 57, 57);
+}
+
+#btn-gunting:hover {
+    background-color: rgb(249, 90, 90);
+}
+
+#btn-kertas {
+    background-color: rgb(255, 241, 40);
+}
+
+#btn-kertas:hover {
+    background-color: rgb(253, 253, 128);
+}
+
+#btn-batu {
+    background-color: rgb(153, 73, 228);
+}
+
+#btn-batu:hover {
+    background-color: rgb(165, 99, 227);
+}
+
+#content {
+    padding: 40px 40px;
+    border-radius: 5px;
+}
+
+.theme-shadow {
+    box-shadow: var(--box-shadow);
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+}
