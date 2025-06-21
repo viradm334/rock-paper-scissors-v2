@@ -1,0 +1,13 @@
+Tugas 10 dan 11
+
+1. Semua variabel diubah jadi menggunakan let dan const. Lalu saya menggunakan ternary operator dan template literal untuk menampilkan skor serta menggunakan arrow function untuk fungsi menunjukkan skor.
+
+2. Const adalah jenis variabel yang tidak bisa direassign nilainya. Sementara let adalah jenis variabel yang bisa direassign nilainya. Let tidak bisa didekalarasikan ulang di luar scopenya. Misalnya ada sebuah variabel let a = 'Roni' yang telah dideklarasikan di luar fungsi dan kita mau reassign dalam suatu fungsi nilainya menjadi 'Budi' maka kalau kita cek nilai variabel itu di dalam fungsi nilainya akan menjadi 'Budi' tapi kalau di luar fungsi maka akan menjadi 'Roni'. Hal ini karena perubahan let hanya berlaku sesuai scopenya saja. Kemudian var adalah jenis variabel yang memiliki scope global dan function. Jadi kalau ada 1 nilai var yang disimpan di dalam fungsi dan variabel tersebut belum pernah dibuat sebelumnya dan kita mau mengakses nilai variabel tersebut di luar scope fungsi itu maka hasilnya tidak error. Hal ini bisa berbahaya jika kita tidak sadar bahwa variabel tersebut belum pernah kita deklarasikan di luar scope function itu.
+
+3. Spread adalah operator dalam bentuk titik 3 (...arr) yang bisa digunakan untuk menyebarkan elemen dalam suatu array ke dalam array lain atau parameter yang butuh array. Misalnya kita mau menjumlahkan semua elemen dalam suatu array yaitu let arr = [1,2,3]. Kita bisa membuat fungsi sum(a,b,c) yang membutuhkan 3 parameter dan kita bisa memasukkan nilai array tersebut seperti ini, sum(...arr) Destructuring adalah sintaks JS yang membuat kita bisa mengekstrak elemen dalam suatu array atau objek ke dalam variabel. Misalnya ada variabel let a dan let b yang mau kita isi dengan nilai 30 dan 50. Kita bisa melakukan itu dengan melakukan destructuring, yaitu [a, b] = [30, 50]
+
+4. Kode yang paling saya suka adalah filter skor dari line 69-77 di script.js
+
+Tugas 12
+
+Saya menggunakan settimeout sebanyak 2 kali untuk mensimulasikan komputer sedang berpikir. Settimeout adalah salah satu fungsi asynchronous yang berguna untuk membuat aplikasi menjalankan fungsi yang ada di dalamnya setelah jeda waktu yang diinginkan dan jika ada kode lain di luar scope settimeout, maka kode itu akan dijalankan duluan. Dalam aplikasi ini, settimeout yang pertama untuk mensimulasikan komputer berpikir selama 2 detik. Karena sifatnya yang asynchronous, kode di luar settimeout yang dieksekusi terlebih dahulu sebelum waktu pada settimeout habis. Kemudian saya buat settimeout yang kedua untuk memberi aplikasi waktu untuk merender tabel skor permainan.

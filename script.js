@@ -13,6 +13,16 @@ const scoreSection = document.getElementById('scoresection');
 const filterScore = document.getElementById('filter-score');
 const choiceBtn = document.querySelectorAll('.choice-btn');
 
+class History {
+  constructor(user, komputer, hasil, skor_user, skor_komp){
+    this.user = user;
+    this.komputer = komputer;
+    this.hasil = hasil;
+    this.skor_user = skor_user;
+    this.skor_komp = skor_komp;
+  }
+}
+
 const showScore = () => {
   userScoreText.innerText = `Skor User: ${userScore}`;
   compScoreText.innerText = `Skor Komputer: ${compScore}`;
@@ -40,9 +50,6 @@ const value = choiceBtn.forEach(button => {
         setTimeout(function(){
             loadText.innerText = '';
             decideWinner(userChoice);
-            // if(gamesPlayed === 5){
-            //   freezeGame();
-            // };
             setTimeout(function(){
               if(gamesPlayed === 5){
                 freezeGame();
@@ -101,13 +108,7 @@ function decideWinner(userChoice) {
     }
   }
 
-  const history = new Object({
-    user: options[userChoice],
-    komputer: options[compChoice],
-    hasil: result,
-    skor_user: userScore,
-    skor_komp: compScore
-  });
+  const history = new History(options[userChoice], options[compChoice], result, userChoice, compScore);
 
   scoreboard.push(history);
   gamesPlayed++;
