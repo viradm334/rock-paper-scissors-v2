@@ -40,21 +40,22 @@ const value = choiceBtn.forEach(button => {
         setTimeout(function(){
             loadText.innerText = '';
             decideWinner(userChoice);
-            if(gamesPlayed === 5){
-              showScoreBoard(scoreboard);
-              scoreSection.classList.remove('d-none');
-              choiceBtn.forEach(b => b.disabled = true);
-            };
-            // setTimeout(function(){
-            //     const continuePlay = confirm('Masih mau main?');
+            // if(gamesPlayed === 5){
+            //   freezeGame();
+            // };
+            setTimeout(function(){
+              if(gamesPlayed === 5){
+                freezeGame();
+              }else{
+                const continuePlay = confirm('Masih mau main?');
 
-            //     if(!continuePlay){
-            //         loadText.innerText = 'Terimakasih telah bermain!';
-            //         resultText.innerText = '';
-            //     };
-            // }, 1000);
+                if(!continuePlay){
+                    freezeGame();
+                };
+              }
+            }, 1000);
         }, 2000);
-        loadText.innerText = 'Thinking...';
+        loadText.innerText = 'Komputer sedang berpikir...';
     })
 });
 
@@ -137,4 +138,12 @@ function showScoreBoard(scoreboard){
       </tr>`
     )
   });
+}
+
+function freezeGame(){
+  showScoreBoard(scoreboard);
+  scoreSection.classList.remove('d-none');
+  choiceBtn.forEach(b => b.disabled = true);
+  loadText.innerText = 'Terimakasih telah bermain!';
+  resultText.innerText = '';
 }
